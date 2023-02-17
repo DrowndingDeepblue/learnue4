@@ -18,6 +18,12 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	/* 在向前/向后的输入时被调用 */
+	void MoveForward(float Value);
+
+	/* 在侧边移动的输入时被调用 （called for side to side input） */
+	void MoveRight(float Value);
+
 
 public:	
 	// Called every frame
