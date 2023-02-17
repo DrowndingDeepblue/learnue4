@@ -27,11 +27,17 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 private:
-	/* Camera boom 将摄像机固定在角色之后 */
+	/* Camera boom 将摄像机固定在角色之后的机械臂 */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = camera, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
 
+	/* 跟随角色的摄像机 */
+	class UCameraComponent * FollowCamera;
+
+
 public:
-	/* 返回 CameraBoom  */
+	/* 返回 CameraBoom  子类 */
 	FORCEINLINE USpringArmComponent*GetCameraBoom() const { return CameraBoom; }
+	/* 返回  FollowCamera 子类 */
+	FORCEINLINE UCameraComponent * GetFollowCamera() const { return FollowCamera; }
 };
